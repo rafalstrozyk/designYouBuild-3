@@ -1,0 +1,16 @@
+{
+  "name": "challenge_build3",
+  "version": "1.0.0",
+  "description": "https://dev.to/zernonia/i-design-you-build-frontend-challenge-3-gda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-build": "sass --no-source-map ./sass/main.scss ./index.css",
+    "css-watch": "sass --watch --no-source-map ./sass/main.scss ./index.css"
+  },
+  "author": "Rafał Stróżyk",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.43.3"
+  }
+}
