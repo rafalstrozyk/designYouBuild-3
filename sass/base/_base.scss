@@ -1,18 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto:wght@400;500&display=swap");
-:root {
-  --text-color-one: #4b4b4b;
-  --text-color-two: #737373;
-  --text-color-one-rgba: rgba(75, 75, 75, 0.5);
-  --body-color: #e5e5e5;
-  --bg-color: #faf4ef;
-  --btn-2-cbg-color: #ffffff;
-  --body-font:"Roboto", sans-serif;
-  --dm-font: "DM Serif Display", serif;
-  --normal-font-size: 1.5rem;
-  --font-medium: 400;
-  --font-semi-bold: 500;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -26,7 +11,6 @@ body {
   background: var(--body-color);
   color: var(--text-color);
 }
-
 h1,
 h2,
 h3,
@@ -38,16 +22,13 @@ h4 {
 ul {
   list-style: none;
 }
-
 a {
   text-decoration: none;
 }
-
 img {
   max-width: 100%;
   height: auto;
 }
-
 button,
 input {
   border: none;
