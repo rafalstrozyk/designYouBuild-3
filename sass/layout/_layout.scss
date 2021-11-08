@@ -1,0 +1,31 @@
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+
+  &-center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-sp-bt {
+      justify-content: space-between;
+  }
+}
+
+.site-grid {
+  grid-template-columns: 100px auto 100px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    '. navigation .'
+    '. content .';
+
+  &-navigation {
+    grid-area: navigation;
+  }
+  &-content {
+    grid-area: content;
+  }
+}

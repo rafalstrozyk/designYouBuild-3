@@ -1,0 +1,22 @@
+.navigation {
+  padding: 25px;
+
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    & > *:not(:last-child) {
+      margin-right: 60px;
+    }
+
+    a {
+      color: var(--text-color-one);
+    }
+  }
+
+  .buttons {
+    & > *:first-child {
+      margin-right: 15px;
+    }
+  }
+}
