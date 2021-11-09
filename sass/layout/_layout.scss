@@ -2,7 +2,7 @@
   display: grid;
 }
 
-.flex {
+.f {
   display: flex;
 
   &-center {
@@ -10,9 +10,10 @@
     align-items: center;
   }
 
-  &-sp-bt {
-      justify-content: space-between;
+  &-column{
+    flex-direction: column;
   }
+
 }
 
 .site-grid {

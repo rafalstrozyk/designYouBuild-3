@@ -4,18 +4,25 @@
   --text-color-one: #4b4b4b;
   --text-color-two: #737373;
   --text-color-one-rgba: rgba(75, 75, 75, 0.5);
-  --body-color: #e5e5e5;
+  --header-background: rgba(255, 255, 255, 0.78);
+  --body-color: #fff;
   --bg-color: #faf4ef;
   --btn-2-cbg-color: #ffffff;
 
-// FONT AND TYPOGRAPHY
---body-font:'Roboto', sans-serif;
---dm-font: 'DM Serif Display', serif;
+  // FONT AND TYPOGRAPHY
+  --body-font: 'Roboto', sans-serif;
+  --dm-font: 'DM Serif Display', serif;
 
---normal-font-size: 1.5rem;
---big-font-size: 2.25rem;
+  --normal-font-size: 1.5rem;
+  --big-font-size: 2.25rem;
+  --headers-font-size: 4rem;
 
-// FONT WEIGHT
---font-medium: 400;
---font-semi-bold: 500;
+  // FONT WEIGHT
+  --font-medium: 400;
+  --font-semi-bold: 500;
+
+  // Z-INDEX
+  --after-max: -5;
+  --after: -1;
+  --before: 10;
 }
