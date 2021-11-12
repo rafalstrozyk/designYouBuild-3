@@ -1,0 +1,60 @@
+.card {
+  flex-direction: column;
+  position: relative;
+  background-color: var(--bg-color);
+  border-bottom-left-radius: 50px;
+  width: 366px;
+  height: 420px;
+  & span {
+    font-family: var(--dm-font);
+    margin-left: 46px;
+  }
+  &-title {
+    font-size: 2.25rem;
+    margin-top: 43px;
+    margin-bottom: 5px;
+  }
+
+  img {
+    position: absolute;
+    max-width: 330px;
+    // bottom: -10px;
+    // right: 0;
+    // left: 0;
+  }
+
+  &-img {
+    &-1 {
+      width: 231px;
+      left: 20%;
+      right: 20%;
+      top: 170px;
+    }
+    &-2 {
+      width: 299px;
+      left: 10%;
+      right: 10%;
+      top: 185px;
+    }
+    &-3 {
+        left: 10%;
+        right: 10%;
+        top: 155px;
+    }
+    &-4 {
+        left: 5%;
+        right: 5%;
+        top: 155px;
+    }
+    &-5 {
+        left: 5%;
+        right: 5%;
+        top: 220px;
+    }
+    &-6 {
+        left: 10%;
+        right: 10%;
+        top: 205px;
+    }
+  }
+}

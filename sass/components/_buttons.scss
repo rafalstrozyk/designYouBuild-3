@@ -3,4 +3,12 @@
     width: 26px;
     height: 26px;
   }
+
+  &-select {
+    color: var(--text-color-one);
+  }
+
+  &-unselect {
+    color: var(--text-color-one-thin);
+  }
 }

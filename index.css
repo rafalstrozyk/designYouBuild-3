@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto:wght@400;500&display=swap");
 :root {
   --text-color-one: #4b4b4b;
+  --text-color-one-thin: #4B4B4B80;
   --text-color-two: #737373;
   --text-color-one-rgba: rgba(75, 75, 75, 0.5);
   --header-background: rgba(255, 255, 255, 0.78);
@@ -91,6 +92,9 @@ section {
   justify-content: center;
   align-items: center;
 }
+.f-wrap {
+  flex-wrap: wrap;
+}
 .f-column {
   flex-direction: column;
 }
@@ -131,6 +135,12 @@ section {
   width: 26px;
   height: 26px;
 }
+.btn-select {
+  color: var(--text-color-one);
+}
+.btn-unselect {
+  color: var(--text-color-one-thin);
+}
 
 .header {
   width: 100%;
@@ -168,4 +178,67 @@ section {
   top: 10%;
   right: -100px;
   z-index: var(--after-max);
+}
+
+.products-menu {
+  column-gap: 55px;
+  margin-bottom: 86px;
+  margin-top: 49px;
+}
+.products-list {
+  gap: 129px 67px;
+}
+
+.card {
+  flex-direction: column;
+  position: relative;
+  background-color: var(--bg-color);
+  border-bottom-left-radius: 50px;
+  width: 366px;
+  height: 420px;
+}
+.card span {
+  font-family: var(--dm-font);
+  margin-left: 46px;
+}
+.card-title {
+  font-size: 2.25rem;
+  margin-top: 43px;
+  margin-bottom: 5px;
+}
+.card img {
+  position: absolute;
+  max-width: 330px;
+}
+.card-img-1 {
+  width: 231px;
+  left: 20%;
+  right: 20%;
+  top: 170px;
+}
+.card-img-2 {
+  width: 299px;
+  left: 10%;
+  right: 10%;
+  top: 185px;
+}
+.card-img-3 {
+  left: 10%;
+  right: 10%;
+  top: 155px;
+}
+.card-img-4 {
+  left: 5%;
+  right: 5%;
+  top: 155px;
+}
+.card-img-5 {
+  left: 5%;
+  right: 5%;
+  top: 220px;
+}
+.card-img-6 {
+  left: 10%;
+  right: 10%;
+  top: 205px;
 }

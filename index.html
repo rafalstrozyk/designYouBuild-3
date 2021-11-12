@@ -9,10 +9,10 @@
     <title>I Design, You Build! - Frontend Challenge #3</title>
   </head>
   <body class="grid site-grid">
-    <div class="site-grid-navigation f navigation" >
+    <div class="site-grid-navigation f navigation">
       <span class="logo">SHPX</span>
       <nav>
-        <ul class="f ">
+        <ul class="f">
           <li><a href="">Home</a></li>
           <li><a href="">About</a></li>
           <li><a href="">Products</a></li>
@@ -20,72 +20,97 @@
         </ul>
       </nav>
       <div class="f buttons">
-        <button class="btn-icon"><img src="./assets/icons/vector-1.png" alt="search"></button>
-        <button class="btn-icon"><img src="./assets/icons/vector-2.png" alt="bin"></button>
+        <button class="btn-icon">
+          <img src="./assets/icons/vector-1.png" alt="search" />
+        </button>
+        <button class="btn-icon">
+          <img src="./assets/icons/vector-2.png" alt="bin" />
+        </button>
       </div>
     </div>
     <div class="site-grid-content">
       <header class="header f">
-          <div class="header-content f f-column">
-            <h2>
-              <span>Modern Interior</span>
-              <span>for your</span>
-              <span>Dream House</span>
-            </h2>
-            <p>We custom make design to suits your needs.</p>
-          </div>
-          <img src="assets/images/image 1.png" alt="room" class="header-bg" />
-          <div class="header-rectangle"></div>
+        <div class="header-content f f-column">
+          <h2>
+            <span>Modern Interior</span>
+            <span>for your</span>
+            <span>Dream House</span>
+          </h2>
+          <p>We custom make design to suits your needs.</p>
+        </div>
+        <img src="assets/images/image 1.png" alt="room" class="header-bg" />
+        <div class="header-rectangle"></div>
       </header>
       <main>
-        <section>
+        <section class="products">
           <h2>Products</h2>
-          <ul>
-            <li><button>All</button></li>
-            <li><button>Lamp</button></li>
-            <li><button>Chair</button></li>
-            <li><button>Table</button></li>
-            <li><button>Sofa</button></li>
+          <ul class="products-menu f f-center">
+            <li><button class="btn-selected">All</button></li>
+            <li><button class="btn-unselect">Lamp</button></li>
+            <li><button class="btn-unselect">Chair</button></li>
+            <li><button class="btn-unselect">Table</button></li>
+            <li><button class="btn-unselect">Sofa</button></li>
           </ul>
-          <ul>
+          <ul class="products-list f f-wrap">
             <li>
-              <div>
-                <span>Chaise Molle</span>
-                <span>&#36;18.00</span>
-              </div>
-            </ul>li>
-  
-            <li>
-              <div>
-                <span>Chaise Molle</span>
+              <div class="card f">
+                <img class="card-img-1" src="./assets/images/5a1ccb9523e3c9 1.png" alt="Molle" />
+                <span class="card-title">Chaise Molle</span>
                 <span>&#36;18.00</span>
               </div>
             </li>
-  
+
             <li>
-              <div>
-                <span>Chaise Molle</span>
+              <div class="card f">
+                <img class="card-img-2"
+                  src="./assets/images/kisspng-eames-lounge-chair-table-charles-and-ray-eames-chair-5ad2f90b0af8f8 1.png"
+                  alt="Molle"
+                />
+                <span class="card-title">Chaise Molle</span>
                 <span>&#36;18.00</span>
               </div>
             </li>
-  
+
             <li>
-              <div>
-                <span>Chaise Molle</span>
+              <div class="card f">
+                <img class="card-img-3"
+                  src="./assets/images/kisspng-table-lamp-floor-tripod-wood-lamp-5ac0f4e25b63a0 1.png"
+                  alt="Molle"
+                />
+                <span class="card-title">Chaise Molle</span>
                 <span>&#36;18.00</span>
               </div>
             </li>
-  
+
             <li>
-              <div>
-                <span>Chaise Molle</span>
+              <div class="card f">
+                <img class="card-img-4"
+                  src="./assets/images/—Pngtree—3d improvement section sofa furniture_5901883 1.png"
+                  alt="Molle"
+                />
+                <span class="card-title">Chaise Molle</span>
+                <span>&#36;18.00</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="card f">
+                <img class="card-img-5"
+                  src="./assets/images/kisspng-table-wardrobe-furniture-living-room-bedroom-tv-cabinet-material-download-5a8126deee57a4 1.png"
+                  alt="Molle"
+                />
+                <span class="card-title">Chaise Molle</span>
                 <span>&#36;48.00</span>
               </div>
             </li>
-  
+
             <li>
-              <div>
-                <span>Chaise Molle</span>
+              <div class="card f">
+                <img class="card-img-6"
+                  src="./assets/images/kisspng-couch-sofa-bed-furniture-designer-hd-personality-of-the-sofa-5aa384d84b8ba6 1.png"
+                  alt="Molle"
+                />
+                <span class="card-title">Chaise Molle</span>
                 <span>&#36;78.00</span>
               </div>
             </li>
@@ -94,10 +119,10 @@
         <section>
           <h2>Showcase</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ullam
-            beatae? Beatae fugiat debitis nemo itaque incidunt rerum numquam sunt
-            officia mollitia suscipit architecto ullam, tempora, rem quia esse.
-            Minus!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+            ullam beatae? Beatae fugiat debitis nemo itaque incidunt rerum
+            numquam sunt officia mollitia suscipit architecto ullam, tempora,
+            rem quia esse. Minus!
           </p>
           <div>
             <button>arrow left</button>
@@ -114,6 +139,5 @@
         </section>
       </main>
     </div>
-    
   </body>
 </html>
