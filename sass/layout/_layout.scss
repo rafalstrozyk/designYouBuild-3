@@ -14,10 +14,9 @@
     flex-wrap: wrap;
   }
 
-  &-column{
+  &-column {
     flex-direction: column;
   }
-
 }
 
 .site-grid {
@@ -32,5 +31,23 @@
   }
   &-content {
     grid-area: content;
+  }
+}
+
+.rectangle {
+  width: 50vw;
+  height: 20%;
+  background-color: var(--bg-color);
+  position: absolute;
+  z-index: var(--after-max);
+
+  &-header {
+    top: 10%;
+    right: -100px;
+  }
+
+  &-showcase {
+    top: 10%;
+    left: -100px;
   }
 }

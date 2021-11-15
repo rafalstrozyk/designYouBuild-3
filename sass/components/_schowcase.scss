@@ -1,0 +1,37 @@
+.showcase {
+  position: relative;
+  column-gap: 68px;
+  p {
+    margin-top: 25px;
+    color: var(--text-color-two);
+  }
+
+  &-buttons {
+    margin-top: 50px;
+    gap: 12px;
+
+    & .disable {
+      path {
+        fill: var(--text-color-one);
+      }
+    }
+
+    & .no-disable {
+      background-color: var(--bg-color-rgba);
+      path {
+        fill: var(--text-color-one-thin);
+      }
+    }
+    button {
+      background-color: var(--bg-color);
+      padding: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        width: 37px;
+        height: 37px;
+      }
+    }
+  }
+}

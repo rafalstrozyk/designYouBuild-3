@@ -7,6 +7,7 @@
   --header-background: rgba(255, 255, 255, 0.78);
   --body-color: #fff;
   --bg-color: #faf4ef;
+  --bg-color-rgba: rgba(250, 244, 239, 0.5);
   --btn-2-cbg-color: #ffffff;
   --body-font: "Roboto", sans-serif;
   --dm-font: "DM Serif Display", serif;
@@ -111,6 +112,22 @@ section {
   grid-area: content;
 }
 
+.rectangle {
+  width: 50vw;
+  height: 20%;
+  background-color: var(--bg-color);
+  position: absolute;
+  z-index: var(--after-max);
+}
+.rectangle-header {
+  top: 10%;
+  right: -100px;
+}
+.rectangle-showcase {
+  top: 10%;
+  left: -100px;
+}
+
 .navigation {
   padding: 25px;
   justify-content: space-between;
@@ -169,15 +186,6 @@ section {
 }
 .header-content h2 span {
   display: block;
-}
-.header-rectangle {
-  width: 50vw;
-  height: 20%;
-  background-color: var(--bg-color);
-  position: absolute;
-  top: 10%;
-  right: -100px;
-  z-index: var(--after-max);
 }
 
 .products-menu {
@@ -241,4 +249,37 @@ section {
   left: 10%;
   right: 10%;
   top: 205px;
+}
+
+.showcase {
+  position: relative;
+  column-gap: 68px;
+}
+.showcase p {
+  margin-top: 25px;
+  color: var(--text-color-two);
+}
+.showcase-buttons {
+  margin-top: 50px;
+  gap: 12px;
+}
+.showcase-buttons .disable path {
+  fill: var(--text-color-one);
+}
+.showcase-buttons .no-disable {
+  background-color: var(--bg-color-rgba);
+}
+.showcase-buttons .no-disable path {
+  fill: var(--text-color-one-thin);
+}
+.showcase-buttons button {
+  background-color: var(--bg-color);
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.showcase-buttons button svg {
+  width: 37px;
+  height: 37px;
 }
