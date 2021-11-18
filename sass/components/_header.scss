@@ -1,25 +1,34 @@
 .header {
-  width: 100%;
-  height: 100vh;
+  width: 90%;
+  height: 80vh;
   position: relative;
+  overflow: hidden;
 
   img {
     z-index: var(--after);
+
+    max-width: 75vw;
+    max-height: 80vh;
+    display: block;
     position: absolute;
     right: 0;
-    width: 66.8vw;
+    height: auto;
     top: 0%;
   }
 
   &-content {
-    width: 492px;
-    height: 452px;
+    padding: 62px 30px;
     justify-content: center;
     z-index: var(--before);
-    bottom: 0%;
+    bottom: 10%;
+
     position: absolute;
     background-color: var(--header-background);
     backdrop-filter: blur(19.1667px);
+
+    @media only screen and (max-width: 975px) {
+      padding: 42px 20px;
+    }
 
     p {
       max-width: 80%;
@@ -28,8 +37,35 @@
     h2 {
       span {
         display: block;
+        white-space: nowrap;
       }
     }
   }
 
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+    height: 90vh;
+    img {
+      position: relative;
+      height: 100%;
+      right: -30%;
+      top: 0;
+      max-width: 120vw;
+      max-height: 100vh;
+      height: auto;
+      width: 120vw;
+    }
+    &-content {
+      bottom: 25%;
+      right: 35%;
+      padding: 36px 16px;
+    }
+
+    @media only screen and (max-width: 625px) {
+      &-content {
+        padding: 15px 5px;
+        right: 20%;
+      }
+    }
+  }
 }

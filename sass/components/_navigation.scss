@@ -1,22 +1,94 @@
 .navigation {
-  padding: 25px;
-
-  justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 
-  ul {
-    & > *:not(:last-child) {
-      margin-right: 60px;
+  &-full {
+    width: 90%;
+    padding: 25px;
+
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      & > *:not(:last-child) {
+        margin-right: 60px;
+      }
+
+      a {
+        color: var(--text-color-one);
+      }
     }
 
-    a {
-      color: var(--text-color-one);
+    .buttons {
+      & > *:first-child {
+        margin-right: 15px;
+      }
     }
   }
 
-  .buttons {
-    & > *:first-child {
-      margin-right: 15px;
+  &-burger {
+    display: none;
+  }
+
+  @media only screen and (max-width: 800px) {
+    &-full {
+      display: none;
+    }
+    &-burger {
+      margin-top: 46px;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+    }
+    & label {
+      // position: fixed;
+      // top: 42px;
+      // right: 28px;
+      display: flex;
+      flex-direction: column;
+      width: 45px;
+      cursor: pointer;
+
+      & span {
+        background: var(--text-color-one);
+        border-radius: 10px;
+        height: 4px;
+        margin: 4px 0;
+        transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+        &:nth-of-type(1) {
+          width: 50%;
+        }
+        &:nth-of-type(2) {
+          width: 100%;
+        }
+        &:nth-of-type(3) {
+          width: 75%;
+        }
+      }
+
+      & input[type='checkbox'] {
+        display: none;
+        &:checked {
+          & ~ span:nth-of-type(1) {
+            transform-origin: bottom;
+            transform: rotatez(45deg) translate(4px, 0px);
+          }
+          & ~ span:nth-of-type(2) {
+            transform-origin: top;
+
+            transform: rotatez(-45deg);
+          }
+          & ~ span:nth-of-type(3) {
+            transform-origin: bottom;
+
+            width: 50%;
+            transform: translate(19px, -5px) rotatez(45deg);
+          }
+        }
+      }
     }
   }
 }

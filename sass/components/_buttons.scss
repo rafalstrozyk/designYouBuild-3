@@ -11,4 +11,14 @@
   &-unselect {
     color: var(--text-color-one-thin);
   }
+
+  &-black {
+    background-color: var(--text-color-one);
+    color: var(--btn-2-cbg-color);
+  }
+  &-white {
+    background-color: var(--btn-2-cbg-color);
+    color: var(--text-color-one);
+  }
+
 }

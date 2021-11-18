@@ -20,11 +20,20 @@
 }
 
 .site-grid {
-  grid-template-columns: 100px auto 100px;
+  grid-template-columns: 6.25rem auto 6.25rem;
   grid-template-rows: auto;
   grid-template-areas:
     '. navigation .'
     '. content .';
+
+  @media only screen and (max-width: 800px) {
+    & {
+      grid-template-columns: 6.25rem auto 6.25rem;
+      grid-template-areas:
+        '. navigation .'
+        '. content .';
+    }
+  }
 
   &-navigation {
     grid-area: navigation;

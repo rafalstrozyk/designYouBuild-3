@@ -1,0 +1,18 @@
+.contact {
+  background-color: var(--bg-color);
+  padding: 80px 50px;
+  border-radius: 0px 100px 0px 0px;
+  margin-bottom: 90px;
+
+  h2 {
+    margin-bottom: 58px;
+  }
+  &-buttons {
+    display: flex;
+    gap: 30px;
+  }
+
+  button {
+    padding: 20px;
+  }
+}
