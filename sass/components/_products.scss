@@ -8,4 +8,47 @@
   &-list {
     gap: 129px 67px;
   }
+
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+    &-list {
+      max-width: 100vw;
+      overflow: hidden;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+
+    &-menu {
+      column-gap: 0;
+      margin: 0;
+
+      .arrow {
+        position: relative;
+        &::after {
+          content: '';
+          z-index: 10;
+          position: absolute;
+          top: 50%;
+          left: 25px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 5px 5px 0 5px;
+          border-color: var(--text-color-one) transparent transparent
+            transparent;
+        }
+      }
+
+      & > *:not(:first-child) {
+        display: none;
+      }
+    }
+
+    &-container {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
