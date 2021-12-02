@@ -1,208 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://api.iconify.design/" />
-    <link rel="stylesheet" href="index.css" />
-    <script src="index.js"></script>
-    <title>I Design, You Build! - Frontend Challenge #3</title>
-  </head>
-  <body class="f f-center">
-    <div class="f navigation">
-      <div class="navigation-burger f">
-        <span class="logo">SHPX</span>
-        <label for="check">
-          <input type="checkbox" id="check" />
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
 
-      <div class="navigation-full f">
-        <span class="logo">SHPX</span>
-        <nav>
-          <ul class="f">
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Products</a></li>
-            <li><a href="">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="f buttons">
-          <button class="btn-icon">
-            <img src="./assets/icons/vector-1.png" alt="search" />
-          </button>
-          <button class="btn-icon">
-            <img src="./assets/icons/vector-2.png" alt="bin" />
-          </button>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://api.iconify.design/" />
+  <link rel="stylesheet" href="index.css" />
+
+  <title>I Design, You Build! - Frontend Challenge #3</title>
+</head>
+
+<body class="f f-center">
+  <div class="f navigation">
+    <div class="navigation-burger f">
+      <span class="logo">SHPX</span>
+      <label for="check">
+        <input type="checkbox" id="check" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+
+    <div class="navigation-full f">
+      <span class="logo">SHPX</span>
+      <nav>
+        <ul class="f">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="f buttons">
+        <button class="btn-icon">
+          <img src="./assets/icons/vector-1.png" alt="search" />
+        </button>
+        <button class="btn-icon">
+          <img src="./assets/icons/vector-2.png" alt="bin" />
+        </button>
       </div>
     </div>
-    <!-- <div class="site-grid-content"> -->
-    <header class="header f">
-      <div class="header-content f f-column">
-        <h2>
-          <span>Modern Interior</span>
-          <span>for your</span>
-          <span>Dream House</span>
-        </h2>
-        <p>We custom make design to suits your needs.</p>
-      </div>
-      <div class="rectangle rectangle-header"></div>
-      <img src="assets/images/image 1.png" alt="room" class="header-bg" />
-    </header>
-    <main class="f f-center">
-      <section class="products">
-        <div class="products-container">
-          <h2>Products</h2>
-          <ul class="products-menu f f-center">
-            <li class="arrow"><button class="btn-selected">All</button></li>
-            <li><button class="btn-unselect">Lamp</button></li>
-            <li><button class="btn-unselect">Chair</button></li>
-            <li><button class="btn-unselect">Table</button></li>
-            <li><button class="btn-unselect">Sofa</button></li>
-          </ul>
-        </div>
-        <ul class="products-list f f-center f-wrap">
-          <li>
-            <div class="card f">
-              <img
-                class="card-img-1"
-                src="./assets/images/5a1ccb9523e3c9 1.png"
-                alt="Molle"
-              />
-              <span class="card-title">Chaise Molle</span>
-              <span>&#36;18.00</span>
-            </div>
-          </li>
-
-          <li>
-            <div class="card f">
-              <img
-                class="card-img-2"
-                src="./assets/images/kisspng-eames-lounge-chair-table-charles-and-ray-eames-chair-5ad2f90b0af8f8 1.png"
-                alt="Molle"
-              />
-              <span class="card-title">Chaise Molle</span>
-              <span>&#36;18.00</span>
-            </div>
-          </li>
-
-          <li>
-            <div class="card f">
-              <img
-                class="card-img-3"
-                src="./assets/images/kisspng-table-lamp-floor-tripod-wood-lamp-5ac0f4e25b63a0 1.png"
-                alt="Molle"
-              />
-              <span class="card-title">Chaise Molle</span>
-              <span>&#36;18.00</span>
-            </div>
-          </li>
-
-          <li>
-            <div class="card f">
-              <img
-                class="card-img-4"
-                src="./assets/images/—Pngtree—3d improvement section sofa furniture_5901883 1.png"
-                alt="Molle"
-              />
-              <span class="card-title">Chaise Molle</span>
-              <span>&#36;18.00</span>
-            </div>
-          </li>
-
-          <li>
-            <div class="card f">
-              <img
-                class="card-img-5"
-                src="./assets/images/kisspng-table-wardrobe-furniture-living-room-bedroom-tv-cabinet-material-download-5a8126deee57a4 1.png"
-                alt="Molle"
-              />
-              <span class="card-title">Chaise Molle</span>
-              <span>&#36;48.00</span>
-            </div>
-          </li>
-
-          <li>
-            <div class="card f">
-              <img
-                class="card-img-6"
-                src="./assets/images/kisspng-couch-sofa-bed-furniture-designer-hd-personality-of-the-sofa-5aa384d84b8ba6 1.png"
-                alt="Molle"
-              />
-              <span class="card-title">Chaise Molle</span>
-              <span>&#36;78.00</span>
-            </div>
-          </li>
+  </div>
+  <!-- <div class="site-grid-content"> -->
+  <header class="header f">
+    <div class="header-content f f-column">
+      <h2>
+        <span>Modern Interior</span>
+        <span>for your</span>
+        <span>Dream House</span>
+      </h2>
+      <p>We custom make design to suits your needs.</p>
+    </div>
+    <div class="rectangle rectangle-header"></div>
+    <img src="assets/images/image 1.png" alt="room" class="header-bg" />
+  </header>
+  <main class="f f-center">
+    <section class="products">
+      <div class="products-container">
+        <h2>Products</h2>
+        <ul id="products-menu" class="products-menu f f-center">
+          <li><button id="all-btn" class="btn-selected arrow">All</button></li>
+          <li><button id="lamp-btn" class="btn-unselect">Lamp</button></li>
+          <li><button id="chair-btn" class="btn-unselect">Chair</button></li>
+          <li><button id="table-btn" class="btn-unselect">Table</button></li>
+          <li><button id="sofa-btn" class="btn-unselect">Sofa</button></li>
         </ul>
-      </section>
-      <section class="showcase f">
-        <span class="rectangle rectangle-showcase"></span>
-        <div class="showcase-image f">
-          <img src="assets/images/image 2.png" alt="black room" />
-        </div>
-        <div class="showcase-container">
-          <div class="showcase-content">
-            <h2>Showcase</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
-              ullam beatae? Beatae fugiat debitis nemo itaque incidunt rerum
-              numquam sunt officia mollitia suscipit architecto ullam, tempora,
-              rem quia esse. Minus!
-            </p>
-            <div class="showcase-buttons f">
-              <button class="no-disable">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  role="img"
-                  class="iconify iconify--mdi"
-                  width="32"
-                  height="32"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M20 11v2H8l5.5 5.5l-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5L8 11h12z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </button>
-              <button class="disable">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  role="img"
-                  class="iconify iconify--mdi"
-                  width="32"
-                  height="32"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11H4z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </button>
-            </div>
+      </div>
+      <ul id="products-list" class="products-list f f-center f-wrap">
+        <li class="chair">
+          <div class="card f">
+            <img class="card-img-1" src="./assets/images/5a1ccb9523e3c9 1.png" alt="Molle" />
+            <span class="card-title">Chaise Molle</span>
+            <span>&#36;18.00</span>
+          </div>
+        </li>
+
+        <li class="chair">
+          <div class="card f">
+            <img class="card-img-2"
+              src="./assets/images/kisspng-eames-lounge-chair-table-charles-and-ray-eames-chair-5ad2f90b0af8f8 1.png"
+              alt="Molle" />
+            <span class="card-title">Chaise Molle</span>
+            <span>&#36;18.00</span>
+          </div>
+        </li>
+
+        <li class="lamp">
+          <div class="card f">
+            <img class="card-img-3" src="./assets/images/kisspng-table-lamp-floor-tripod-wood-lamp-5ac0f4e25b63a0 1.png"
+              alt="Molle" />
+            <span class="card-title">Chaise Molle</span>
+            <span>&#36;18.00</span>
+          </div>
+        </li>
+
+        <li class="chair">
+          <div class="card f">
+            <img class="card-img-4" src="./assets/images/—Pngtree—3d improvement section sofa furniture_5901883 1.png"
+              alt="Molle" />
+            <span class="card-title">Chaise Molle</span>
+            <span>&#36;18.00</span>
+          </div>
+        </li>
+
+        <li class="table">
+          <div class="card f">
+            <img class="card-img-5"
+              src="./assets/images/kisspng-table-wardrobe-furniture-living-room-bedroom-tv-cabinet-material-download-5a8126deee57a4 1.png"
+              alt="Molle" />
+            <span class="card-title">Chaise Molle</span>
+            <span>&#36;48.00</span>
+          </div>
+        </li>
+
+        <li class="sofa">
+          <div class="card f">
+            <img class="card-img-6"
+              src="./assets/images/kisspng-couch-sofa-bed-furniture-designer-hd-personality-of-the-sofa-5aa384d84b8ba6 1.png"
+              alt="Molle" />
+            <span class="card-title">Chaise Molle</span>
+            <span>&#36;78.00</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="showcase f">
+      <span class="rectangle rectangle-showcase"></span>
+      <div class="showcase-image f">
+        <img src="assets/images/image 2.png" alt="black room" />
+      </div>
+      <div class="showcase-container">
+        <div class="showcase-content">
+          <h2>Showcase</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+            ullam beatae? Beatae fugiat debitis nemo itaque incidunt rerum
+            numquam sunt officia mollitia suscipit architecto ullam, tempora,
+            rem quia esse. Minus!
+          </p>
+          <div class="showcase-buttons f">
+            <button class="no-disable">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                role="img" class="iconify iconify--mdi" width="32" height="32" preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24">
+                <path d="M20 11v2H8l5.5 5.5l-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5L8 11h12z" fill="currentColor"></path>
+              </svg>
+            </button>
+            <button class="disable">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                role="img" class="iconify iconify--mdi" width="32" height="32" preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24">
+                <path d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11H4z" fill="currentColor">
+                </path>
+              </svg>
+            </button>
           </div>
         </div>
-      </section>
-      <section class="contact">
-        <h2>Get your quotation today</h2>
-        <div class="contact-buttons">
-          <button class="btn-black">Quote me</button>
-          <button class="btn-white">Contact Sales</button>
-        </div>
-      </section>
-    </main>
-    <!-- </div> -->
-  </body>
+      </div>
+    </section>
+    <section class="contact">
+      <h2>Get your quotation today</h2>
+      <div class="contact-buttons">
+        <button class="btn-black">Quote me</button>
+        <button class="btn-white">Contact Sales</button>
+      </div>
+    </section>
+  </main>
+  <!-- </div> -->
+  <script src="index.js"></script>
+</body>
+
 </html>
