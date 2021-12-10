@@ -20,7 +20,8 @@
   }
 
   &-buttons {
-    margin-top: 50px;
+    position: absolute;
+    top: 60%;
     gap: 12px;
 
     & .disable {

@@ -133,6 +133,14 @@ section {
   flex-direction: column;
 }
 
+.dis-block {
+  display: block;
+}
+
+.dis-none {
+  display: none;
+}
+
 .site-grid {
   grid-template-columns: 6.25rem auto 6.25rem;
   grid-template-rows: auto;
@@ -330,6 +338,9 @@ section {
   }
 }
 
+.products {
+  width: 100%;
+}
 .products-menu {
   column-gap: 55px;
   margin-bottom: 86px;
@@ -449,7 +460,8 @@ section {
   color: var(--text-color-two);
 }
 .showcase-buttons {
-  margin-top: 50px;
+  position: absolute;
+  top: 60%;
   gap: 12px;
 }
 .showcase-buttons .disable path {

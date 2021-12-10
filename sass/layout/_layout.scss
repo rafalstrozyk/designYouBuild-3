@@ -19,6 +19,14 @@
   }
 }
 
+.dis-block {
+  display: block;
+}
+
+.dis-none {
+  display: none;
+}
+
 .site-grid {
   grid-template-columns: 6.25rem auto 6.25rem;
   grid-template-rows: auto;

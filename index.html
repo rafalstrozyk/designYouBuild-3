@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://api.iconify.design/" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="index.css" />
 
   <title>I Design, You Build! - Frontend Challenge #3</title>
@@ -44,7 +45,7 @@
     </div>
   </div>
   <!-- <div class="site-grid-content"> -->
-  <header class="header f">
+  <header data-aos="fade-right" class="header f">
     <div class="header-content f f-column">
       <h2>
         <span>Modern Interior</span>
@@ -60,7 +61,7 @@
     <section class="products">
       <div class="products-container">
         <h2>Products</h2>
-        <ul id="products-menu" class="products-menu f f-center">
+        <ul data-aos="fade-up-right" id="products-menu" class="products-menu f f-center">
           <li><button id="all-btn" class="btn-selected arrow">All</button></li>
           <li><button id="lamp-btn" class="btn-unselect">Lamp</button></li>
           <li><button id="chair-btn" class="btn-unselect">Chair</button></li>
@@ -68,7 +69,7 @@
           <li><button id="sofa-btn" class="btn-unselect">Sofa</button></li>
         </ul>
       </div>
-      <ul id="products-list" class="products-list f f-center f-wrap">
+      <ul data-aos="fade-left" id="products-list" class="products-list f f-center f-wrap">
         <li class="chair">
           <div class="card f">
             <img class="card-img-1" src="./assets/images/5a1ccb9523e3c9 1.png" alt="Molle" />
@@ -126,29 +127,53 @@
         </li>
       </ul>
     </section>
-    <section class="showcase f">
+    <section data-aos="zoom-in" class="showcase f">
       <span class="rectangle rectangle-showcase"></span>
       <div class="showcase-image f">
         <img src="assets/images/image 2.png" alt="black room" />
       </div>
       <div class="showcase-container">
         <div class="showcase-content">
-          <h2>Showcase</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
-            ullam beatae? Beatae fugiat debitis nemo itaque incidunt rerum
-            numquam sunt officia mollitia suscipit architecto ullam, tempora,
-            rem quia esse. Minus!
-          </p>
+          <div id="showcases-list">
+            <div class="dis-block" id="showcase-1">
+              <h2>Showcase</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+                ullam beatae? Beatae fugiat debitis nemo itaque incidunt rerum
+                numquam sunt officia mollitia suscipit architecto ullam, tempora,
+                rem quia esse. Minus!
+              </p>
+            </div>
+            <div class="dis-none" id="showcase-2">
+              <h2>Showcase 2</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+                ullam beatae? Beatae fugiat debitis nemo itaque incidunt rerum
+                numquam sunt officia mollitia suscipit architecto ullam, tempora,
+                rem quia esse. Minus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit minima quidem
+                amet
+                eius. Voluptatem laudantium nesciunt ipsam. Doloremque accusamus consequuntur recusandae adipisci
+                inventore, atque itaque sed reiciendis est, fuga sint.
+              </p>
+            </div>
+            <div class="dis-none" id="showcase-3">
+              <h2>Showcase 3</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+                ullam beatae?
+              </p>
+            </div>
+          </div>
+
           <div class="showcase-buttons f">
-            <button class="no-disable">
+            <button class="disable" id="btn-showcase-l">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
                 role="img" class="iconify iconify--mdi" width="32" height="32" preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24">
                 <path d="M20 11v2H8l5.5 5.5l-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5L8 11h12z" fill="currentColor"></path>
               </svg>
             </button>
-            <button class="disable">
+            <button class="disable" id="btn-showcase-r">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
                 role="img" class="iconify iconify--mdi" width="32" height="32" preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24">
@@ -160,7 +185,7 @@
         </div>
       </div>
     </section>
-    <section class="contact">
+    <section data-aos="flip-left" class="contact">
       <h2>Get your quotation today</h2>
       <div class="contact-buttons">
         <button class="btn-black">Quote me</button>
@@ -168,7 +193,9 @@
       </div>
     </section>
   </main>
-  <!-- </div> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="index.js"></script>
 </body>
 
