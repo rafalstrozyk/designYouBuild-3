@@ -61,15 +61,27 @@
   @media only screen and (max-width: 800px) {
     flex-wrap: wrap;
     max-width: 100%;
+    margin-bottom: 100px;
     width: 100%;
     img {
       width: 90%;
     }
     &-content {
+      margin-top: 50px;
       width: 90%;
+      height: 250px;
+    }
+    &-buttons {
+      top: 115% !important;
     }
     &-image {
       justify-content: flex-end;
+    }
+  }
+
+  @media only screen and (max-width: 975px) {
+    &-buttons {
+      top: 75%;
     }
   }
 }

@@ -1,6 +1,23 @@
 AOS.init({
   once: true,
 });
+
+const burgerCheckbox = document.getElementById('burger-check');
+const nav = document.getElementById('burger-nav');
+
+burgerCheckbox.addEventListener('change', (e) => {
+  e.target.checked
+    ? (nav.style.display = 'block')
+    : (nav.style.display = 'none');
+});
+
+document.addEventListener('click', (e) => {
+  if (!nav.contains(e.target) && !burgerCheckbox.contains(e.target)) {
+    nav.style.display = 'none';
+    burgerCheckbox.checked = false;
+  }
+});
+
 const products = ['lamp', 'chair', 'table', 'sofa'];
 
 class ProductButton {
