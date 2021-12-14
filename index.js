@@ -44,7 +44,6 @@ class ProductButton {
       ? this.products.forEach((prod) => {
           Array.from(this.getProducts(prod)).forEach((item) => {
             item.style.display = 'block';
-            console.log(item.className);
             gsap.fromTo(
               `.${item.className}`,
               {
@@ -73,7 +72,6 @@ class ProductButton {
               opacity: 1,
             }
           );
-
         });
   }
 
@@ -92,9 +90,9 @@ products.forEach((prodBtn) => {
   new ProductButton(prodBtn, products).btnClick();
 });
 
-const allBtn = new ProductButton('all', products);
+const prodAllBtn = new ProductButton('all', products);
 
-allBtn.btnClick();
+prodAllBtn.btnClick();
 
 const btnShowcaseR = document.getElementById('btn-showcase-r');
 const btnShowcaseL = document.getElementById('btn-showcase-l');
@@ -107,14 +105,41 @@ btnShowcaseR.addEventListener('click', () => {
   if (showcaseLocation > showcaseLisElements - 1) {
     showcaseLocation = 0;
   }
-  showcaseList.children[
-    showcaseLocation === 0 ? showcaseLisElements - 1 : showcaseLocation - 1
-  ].classList.add('dis-none');
-  showcaseList.children[
-    showcaseLocation === 0 ? showcaseLisElements - 1 : showcaseLocation - 1
-  ].classList.remove('dis-block');
-  showcaseList.children[showcaseLocation].classList.add('dis-block');
-  showcaseList.children[showcaseLocation].classList.remove('dis-none');
+  gsap.fromTo(
+    showcaseList.children[
+      showcaseLocation === 0 ? showcaseLisElements - 1 : showcaseLocation - 1
+    ],
+    { opacity: 1, transform: 'translateX(0%)' },
+    {
+      opacity: 0,
+      transform: 'translateX(70%)',
+      duration: 0.4,
+      onComplete: () => {
+        showcaseList.children[
+          showcaseLocation === 0
+            ? showcaseLisElements - 1
+            : showcaseLocation - 1
+        ].classList.remove('dis-block');
+        showcaseList.children[
+          showcaseLocation === 0
+            ? showcaseLisElements - 1
+            : showcaseLocation - 1
+        ].classList.add('dis-none');
+
+        showcaseList.children[showcaseLocation].classList.remove('dis-none');
+        showcaseList.children[showcaseLocation].classList.add('dis-block');
+        gsap.fromTo(
+          showcaseList.children[showcaseLocation],
+          { opacity: 0, transform: 'translateX(150%)' },
+          {
+            opacity: 1,
+            transform: 'translateX(0%)',
+            duration: 0.4,
+          }
+        );
+      },
+    }
+  );
 });
 
 btnShowcaseL.addEventListener('click', () => {
@@ -123,13 +148,39 @@ btnShowcaseL.addEventListener('click', () => {
     showcaseLocation = showcaseLisElements - 1;
   }
 
-  showcaseList.children[
-    showcaseLocation + 1 === showcaseLisElements ? 0 : showcaseLocation + 1
-  ].classList.add('dis-none');
-  showcaseList.children[
-    showcaseLocation + 1 === showcaseLisElements ? 0 : showcaseLocation + 1
-  ].classList.remove('dis-block');
+  gsap.fromTo(
+    showcaseList.children[
+      showcaseLocation + 1 === showcaseLisElements ? 0 : showcaseLocation + 1
+    ],
+    { opacity: 1, transform: 'translateX(0%)' },
+    {
+      opacity: 0,
+      transform: 'translateX(70%)',
+      duration: 0.4,
+      onComplete: () => {
+        showcaseList.children[
+          showcaseLocation + 1 === showcaseLisElements
+            ? 0
+            : showcaseLocation + 1
+        ].classList.remove('dis-block');
+        showcaseList.children[
+          showcaseLocation + 1 === showcaseLisElements
+            ? 0
+            : showcaseLocation + 1
+        ].classList.add('dis-none');
 
-  showcaseList.children[showcaseLocation].classList.add('dis-block');
-  showcaseList.children[showcaseLocation].classList.remove('dis-none');
+        showcaseList.children[showcaseLocation].classList.remove('dis-none');
+        showcaseList.children[showcaseLocation].classList.add('dis-block');
+        gsap.fromTo(
+          showcaseList.children[showcaseLocation],
+          { opacity: 0, transform: 'translateX(150%)' },
+          {
+            opacity: 1,
+            transform: 'translateX(0%)',
+            duration: 0.4,
+          }
+        );
+      },
+    }
+  );
 });

@@ -449,11 +449,19 @@ section {
 }
 .showcase-image {
   width: 100%;
+  z-index: 20;
+  position: relative;
+}
+.showcase .pos-r {
+  position: relative;
 }
 .showcase-container {
+  max-width: 700px;
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
+  z-index: 0;
 }
 .showcase-content p {
   margin-top: 25px;

@@ -4,12 +4,21 @@
 
   &-image {
     width: 100%;
+    z-index: 20;
+    position: relative;
+  }
+
+  .pos-r {
+    position: relative;
   }
 
   &-container {
+    max-width: 700px;
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
+    z-index: 0;
   }
 
   &-content {
