@@ -117,14 +117,19 @@ const showcaseList = document.getElementById('showcases-list');
 const showcaseLisElements = showcaseList.children.length;
 let showcaseLocation = 0;
 
-btnShowcaseR.addEventListener('click', () => {
-  showcaseLocation++;
-  if (showcaseLocation > showcaseLisElements - 1) {
-    showcaseLocation = 0;
-  }
+const showcaseHandle = (mut) => {
+  mut ? showcaseLocation++ : showcaseLocation--;
+  showcaseLocation > showcaseLisElements - 1 ? (showcaseLocation = 0) : null;
+  showcaseLocation < 0 ? (showcaseLocation = showcaseLisElements - 1) : null;
   gsap.fromTo(
     showcaseList.children[
-      showcaseLocation === 0 ? showcaseLisElements - 1 : showcaseLocation - 1
+      mut
+        ? showcaseLocation === 0
+          ? showcaseLisElements - 1
+          : showcaseLocation - 1
+        : showcaseLocation + 1 === showcaseLisElements
+        ? 0
+        : showcaseLocation + 1
     ],
     { opacity: 1, transform: 'translateX(0%)' },
     {
@@ -133,14 +138,22 @@ btnShowcaseR.addEventListener('click', () => {
       duration: 0.4,
       onComplete: () => {
         showcaseList.children[
-          showcaseLocation === 0
-            ? showcaseLisElements - 1
-            : showcaseLocation - 1
+          mut
+            ? showcaseLocation === 0
+              ? showcaseLisElements - 1
+              : showcaseLocation - 1
+            : showcaseLocation + 1 === showcaseLisElements
+            ? 0
+            : showcaseLocation + 1
         ].classList.remove('dis-block');
         showcaseList.children[
-          showcaseLocation === 0
-            ? showcaseLisElements - 1
-            : showcaseLocation - 1
+          mut
+            ? showcaseLocation === 0
+              ? showcaseLisElements - 1
+              : showcaseLocation - 1
+            : showcaseLocation + 1 === showcaseLisElements
+            ? 0
+            : showcaseLocation + 1
         ].classList.add('dis-none');
 
         showcaseList.children[showcaseLocation].classList.remove('dis-none');
@@ -157,47 +170,12 @@ btnShowcaseR.addEventListener('click', () => {
       },
     }
   );
+};
+
+btnShowcaseR.addEventListener('click', () => {
+  showcaseHandle(true);
 });
 
 btnShowcaseL.addEventListener('click', () => {
-  showcaseLocation--;
-  if (showcaseLocation < 0) {
-    showcaseLocation = showcaseLisElements - 1;
-  }
-
-  gsap.fromTo(
-    showcaseList.children[
-      showcaseLocation + 1 === showcaseLisElements ? 0 : showcaseLocation + 1
-    ],
-    { opacity: 1, transform: 'translateX(0%)' },
-    {
-      opacity: 0,
-      transform: 'translateX(70%)',
-      duration: 0.4,
-      onComplete: () => {
-        showcaseList.children[
-          showcaseLocation + 1 === showcaseLisElements
-            ? 0
-            : showcaseLocation + 1
-        ].classList.remove('dis-block');
-        showcaseList.children[
-          showcaseLocation + 1 === showcaseLisElements
-            ? 0
-            : showcaseLocation + 1
-        ].classList.add('dis-none');
-
-        showcaseList.children[showcaseLocation].classList.remove('dis-none');
-        showcaseList.children[showcaseLocation].classList.add('dis-block');
-        gsap.fromTo(
-          showcaseList.children[showcaseLocation],
-          { opacity: 0, transform: 'translateX(150%)' },
-          {
-            opacity: 1,
-            transform: 'translateX(0%)',
-            duration: 0.4,
-          }
-        );
-      },
-    }
-  );
+  showcaseHandle(false);
 });
