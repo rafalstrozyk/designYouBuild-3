@@ -8,6 +8,10 @@
     color: var(--text-color-one);
   }
 
+  &-small {
+    display: none;
+  }
+
   &-full {
     width: 90%;
     padding: 25px;
@@ -28,16 +32,15 @@
     }
   }
 
-  &-burger {
-    display: none;
-  }
-
   @media only screen and (max-width: 800px) {
     width: 90%;
     justify-content: space-between;
     z-index: 500;
     &-full {
       display: none;
+    }
+    &-small {
+      display: block;
     }
     &-burger {
       position: fixed;

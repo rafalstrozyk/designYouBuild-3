@@ -4,6 +4,8 @@ AOS.init({
 
 const burgerCheckbox = document.getElementById('burger-check');
 const nav = document.getElementById('burger-nav');
+const navigationBurger =
+  document.getElementsByClassName('navigation-burger')[0];
 
 burgerCheckbox.addEventListener('change', (e) => {
   e.target.checked
@@ -12,7 +14,7 @@ burgerCheckbox.addEventListener('change', (e) => {
 });
 
 document.addEventListener('click', (e) => {
-  if (!nav.contains(e.target) && !burgerCheckbox.contains(e.target)) {
+  if (!navigationBurger.contains(e.target) && burgerCheckbox.checked) {
     nav.style.display = 'none';
     burgerCheckbox.checked = false;
   }
@@ -178,4 +180,32 @@ btnShowcaseR.addEventListener('click', () => {
 
 btnShowcaseL.addEventListener('click', () => {
   showcaseHandle(false);
+});
+
+const productsList = document.getElementById('products-list');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+productsList.addEventListener('mousedown', (e) => {
+  isDown = true;
+  productsList.classList.add('active');
+  startX = e.pageX - productsList.offsetLeft;
+  scrollLeft = productsList.scrollLeft;
+});
+productsList.addEventListener('mouseleave', () => {
+  isDown = false;
+  productsList.classList.remove('active');
+});
+productsList.addEventListener('mouseup', () => {
+  isDown = false;
+  productsList.classList.remove('active');
+});
+productsList.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - productsList.offsetLeft;
+  const walk = (x - startX) * 3; //scroll-fast
+  productsList.scrollLeft = scrollLeft - walk;
+  console.log(walk);
 });
