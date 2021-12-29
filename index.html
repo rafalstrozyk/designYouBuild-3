@@ -15,7 +15,27 @@
 
 <body class="f f-center">
   <div class="f navigation">
-    <div class="navigation-small">
+ 
+      <span class="logo">SHPX</span>
+      <div class="navigation-burger f">
+        <label for="burger-check">
+          <input type="checkbox" name="burger-check" id="burger-check" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="f" id="burger-nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+ 
+
+    <!-- <div class="navigation-small">
       <span class="logo">SHPX</span>
       <div class="navigation-burger f">
         <label for="burger-check">
@@ -33,10 +53,10 @@
           </ul>
         </nav>
       </div>
-    </div>
+    </div> -->
 
 
-    <div class="navigation-full f">
+    <!-- <div class="navigation-full f">
       <span class="logo">SHPX</span>
       <nav>
         <ul class="f">
@@ -54,6 +74,14 @@
           <img src="./assets/icons/vector-2.png" alt="bin" />
         </button>
       </div>
+    </div> -->
+    <div class="f buttons">
+      <button class="btn-icon">
+        <img src="./assets/icons/vector-1.png" alt="search" />
+      </button>
+      <button class="btn-icon">
+        <img src="./assets/icons/vector-2.png" alt="bin" />
+      </button>
     </div>
   </div>
   <!-- <div class="site-grid-content"> -->
@@ -73,8 +101,9 @@
     <section class="products">
       <div class="products-container">
         <h2>Products</h2>
+        <button class="arrow" id="btn-products-menu"></button>
         <ul data-aos="fade-up-right" id="products-menu" class="products-menu f f-center">
-          <li><button id="all-btn" class="btn-selected arrow">All</button></li>
+          <li><button id="all-btn" class="btn-selected">All</button></li>
           <li><button id="lamp-btn" class="btn-unselect">Lamp</button></li>
           <li><button id="chair-btn" class="btn-unselect">Chair</button></li>
           <li><button id="table-btn" class="btn-unselect">Table</button></li>

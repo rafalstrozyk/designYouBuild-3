@@ -6,6 +6,15 @@ const burgerCheckbox = document.getElementById('burger-check');
 const nav = document.getElementById('burger-nav');
 const navigationBurger =
   document.getElementsByClassName('navigation-burger')[0];
+const btnProductsMenu = document.getElementById('btn-products-menu');
+const productsMenu = document.getElementById('products-menu');
+
+const showProductsMenuAnimation = () => {
+  gsap.to('.products-menu', { duration: 0.1, opacity: 1, display: 'flex' });
+};
+const unshowProductsMenuAnimation = () => {
+  gsap.to('.products-menu', { duration: 0.1, opacity: 0, display: 'none' });
+};
 
 burgerCheckbox.addEventListener('change', (e) => {
   e.target.checked
@@ -18,6 +27,15 @@ document.addEventListener('click', (e) => {
     nav.style.display = 'none';
     burgerCheckbox.checked = false;
   }
+  if (!btnProductsMenu.contains(e.target) && !productsMenu.contains(e.target)) {
+    unshowProductsMenuAnimation();
+  }
+});
+
+btnProductsMenu.addEventListener('click', () => {
+  productsMenu.style.display === 'flex'
+    ? unshowProductsMenuAnimation()
+    : showProductsMenuAnimation();
 });
 
 const products = ['lamp', 'chair', 'table', 'sofa'];
@@ -45,17 +63,15 @@ class ProductButton {
   }
 
   changeBtnStyle() {
-    Array.from(document.getElementById('products-menu').children).forEach(
-      (btn) => {
-        if (btn.firstChild.id === `${this.product}-btn`) {
-          btn.firstChild.classList.remove('btn-unselect');
-          btn.firstChild.classList.add('btn-selected');
-        } else {
-          btn.firstChild.classList.add('btn-unselect');
-          btn.firstChild.classList.remove('btn-selected');
-        }
+    Array.from(productsMenu.children).forEach((btn) => {
+      if (btn.firstChild.id === `${this.product}-btn`) {
+        btn.firstChild.classList.remove('btn-unselect');
+        btn.firstChild.classList.add('btn-selected');
+      } else {
+        btn.firstChild.classList.add('btn-unselect');
+        btn.firstChild.classList.remove('btn-selected');
       }
-    );
+    });
   }
 
   changeDisplayProducts() {
