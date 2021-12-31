@@ -178,6 +178,7 @@ section {
 
 .navigation {
   width: 90%;
+  padding: 25px;
   justify-content: space-between;
   align-items: center;
 }
@@ -190,22 +191,10 @@ section {
 .navigation-burger label {
   display: none;
 }
-.navigation-burger ul {
-  display: flex;
-}
 .navigation-burger ul > *:not(:last-child) {
-  margin-right: 20px;
-}
-.navigation-full {
-  width: 90%;
-  padding: 25px;
-  justify-content: space-between;
-  align-items: center;
-}
-.navigation-full ul > *:not(:last-child) {
   margin-right: 60px;
 }
-.navigation-full .buttons > *:first-child {
+.navigation .buttons > *:first-child {
   margin-right: 15px;
 }
 @media only screen and (max-width: 800px) {
@@ -213,6 +202,10 @@ section {
     width: 90%;
     justify-content: space-between;
     z-index: 500;
+    padding: 0;
+  }
+  .navigation .buttons {
+    margin-right: 60px;
   }
   .navigation-burger {
     position: fixed;
@@ -502,6 +495,7 @@ section {
 }
 
 .showcase {
+  max-width: 90vw;
   position: relative;
   column-gap: 68px;
 }
@@ -513,8 +507,11 @@ section {
 .showcase .pos-r {
   position: relative;
 }
+.showcase #showcases-list {
+  max-width: 100vw;
+  overflow: hidden;
+}
 .showcase-container {
-  max-width: 700px;
   position: relative;
   width: 100%;
   display: flex;

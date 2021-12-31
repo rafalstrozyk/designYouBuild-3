@@ -2,43 +2,100 @@ AOS.init({
   once: true,
 });
 
-const burgerCheckbox = document.getElementById('burger-check');
-const nav = document.getElementById('burger-nav');
+const products = ['lamp', 'chair', 'table', 'sofa']; // list of products
+const burgerCheckbox = document.getElementById('burger-check'); // checkbox burger navigation
+const nav = document.getElementById('burger-nav'); // navigation nav in burger
 const navigationBurger =
-  document.getElementsByClassName('navigation-burger')[0];
-const btnProductsMenu = document.getElementById('btn-products-menu');
-const productsMenu = document.getElementById('products-menu');
+  document.getElementsByClassName('navigation-burger')[0]; //container navigation and burger
+const btnProductsMenu = document.getElementById('btn-products-menu'); //button in mobile version for products menu
+const productsMenu = document.getElementById('products-menu'); // list of products buttons
+const navLinks = document.querySelectorAll('#burger-nav ul li a'); // links to site elements
+
+// showcase vars
+const btnShowcaseR = document.getElementById('btn-showcase-r');
+const btnShowcaseL = document.getElementById('btn-showcase-l');
+const showcaseList = document.getElementById('showcases-list');
+const showcaseLisElements = showcaseList.children.length;
+let showcaseLocation = 0;
+
+// function for show new content and hide previous content
+// must is boolean. True -> right, false -> left button
+const showcaseHandle = (mut) => {
+  mut ? showcaseLocation++ : showcaseLocation--;
+  showcaseLocation > showcaseLisElements - 1 ? (showcaseLocation = 0) : null;
+  showcaseLocation < 0 ? (showcaseLocation = showcaseLisElements - 1) : null;
+  gsap.fromTo(
+    showcaseList.children[
+      mut
+        ? showcaseLocation === 0
+          ? showcaseLisElements - 1
+          : showcaseLocation - 1
+        : showcaseLocation + 1 === showcaseLisElements
+        ? 0
+        : showcaseLocation + 1
+    ],
+    { opacity: 1, transform: 'translateX(0%)' },
+    {
+      opacity: 0,
+      transform: 'translateX(70%)',
+      duration: 0.4,
+      onComplete: () => {
+        showcaseList.children[
+          mut
+            ? showcaseLocation === 0
+              ? showcaseLisElements - 1
+              : showcaseLocation - 1
+            : showcaseLocation + 1 === showcaseLisElements
+            ? 0
+            : showcaseLocation + 1
+        ].classList.remove('dis-block');
+        showcaseList.children[
+          mut
+            ? showcaseLocation === 0
+              ? showcaseLisElements - 1
+              : showcaseLocation - 1
+            : showcaseLocation + 1 === showcaseLisElements
+            ? 0
+            : showcaseLocation + 1
+        ].classList.add('dis-none');
+
+        showcaseList.children[showcaseLocation].classList.remove('dis-none');
+        showcaseList.children[showcaseLocation].classList.add('dis-block');
+        gsap.fromTo(
+          showcaseList.children[showcaseLocation],
+          { opacity: 0, transform: 'translateX(150%)' },
+          {
+            opacity: 1,
+            transform: 'translateX(0%)',
+            duration: 0.4,
+          }
+        );
+      },
+    }
+  );
+};
+
+const reportWindowSize = () => {
+  return {
+    x: window.innerWidth,
+    y: window.innerHeig,
+  };
+};
+
+const clickScrollToHandler = (e) => {
+  e.preventDefault();
+  const href = e.target.getAttribute('href');
+  document.querySelector(href).scrollIntoView({
+    behavior: 'smooth',
+  });
+};
 
 const showProductsMenuAnimation = () => {
-  gsap.to('.products-menu', { duration: 0.1, opacity: 1, display: 'flex' });
+  gsap.to(productsMenu, { duration: 0.1, opacity: 1, display: 'flex' });
 };
 const unshowProductsMenuAnimation = () => {
-  gsap.to('.products-menu', { duration: 0.1, opacity: 0, display: 'none' });
+  gsap.to(productsMenu, { duration: 0.1, opacity: 0, display: 'none' });
 };
-
-burgerCheckbox.addEventListener('change', (e) => {
-  e.target.checked
-    ? (nav.style.display = 'block')
-    : (nav.style.display = 'none');
-});
-
-document.addEventListener('click', (e) => {
-  if (!navigationBurger.contains(e.target) && burgerCheckbox.checked) {
-    nav.style.display = 'none';
-    burgerCheckbox.checked = false;
-  }
-  if (!btnProductsMenu.contains(e.target) && !productsMenu.contains(e.target)) {
-    unshowProductsMenuAnimation();
-  }
-});
-
-btnProductsMenu.addEventListener('click', () => {
-  productsMenu.style.display === 'flex'
-    ? unshowProductsMenuAnimation()
-    : showProductsMenuAnimation();
-});
-
-const products = ['lamp', 'chair', 'table', 'sofa'];
 
 class ProductButton {
   constructor(product, products) {
@@ -121,6 +178,43 @@ class ProductButton {
   }
 }
 
+for (const link of navLinks) {
+  link.addEventListener('click', clickScrollToHandler);
+}
+
+window.addEventListener('resize', () => {
+  // used for delete display none in computer version if is resize
+  reportWindowSize().x > 800
+    ? productsMenu.style.display != 'flex'
+      ? (productsMenu.style.display = 'flex')
+      : null
+    : (productsMenu.style.display = 'none');
+});
+
+// show menu mobile version on click burger
+burgerCheckbox.addEventListener('change', (e) => {
+  e.target.checked
+    ? (nav.style.display = 'block')
+    : (nav.style.display = 'none');
+});
+
+// unshow menu when click outside burger and menu box
+document.addEventListener('click', (e) => {
+  if (!navigationBurger.contains(e.target) && burgerCheckbox.checked) {
+    nav.style.display = 'none';
+    burgerCheckbox.checked = false;
+  }
+  if (!btnProductsMenu.contains(e.target) && !productsMenu.contains(e.target)) {
+    unshowProductsMenuAnimation();
+  }
+});
+
+btnProductsMenu.addEventListener('click', () => {
+  productsMenu.style.display === 'flex'
+    ? unshowProductsMenuAnimation()
+    : showProductsMenuAnimation();
+});
+
 products.forEach((prodBtn) => {
   new ProductButton(prodBtn, products).btnClick();
 });
@@ -128,67 +222,6 @@ products.forEach((prodBtn) => {
 const prodAllBtn = new ProductButton('all', products);
 
 prodAllBtn.btnClick();
-
-const btnShowcaseR = document.getElementById('btn-showcase-r');
-const btnShowcaseL = document.getElementById('btn-showcase-l');
-const showcaseList = document.getElementById('showcases-list');
-const showcaseLisElements = showcaseList.children.length;
-let showcaseLocation = 0;
-
-const showcaseHandle = (mut) => {
-  mut ? showcaseLocation++ : showcaseLocation--;
-  showcaseLocation > showcaseLisElements - 1 ? (showcaseLocation = 0) : null;
-  showcaseLocation < 0 ? (showcaseLocation = showcaseLisElements - 1) : null;
-  gsap.fromTo(
-    showcaseList.children[
-      mut
-        ? showcaseLocation === 0
-          ? showcaseLisElements - 1
-          : showcaseLocation - 1
-        : showcaseLocation + 1 === showcaseLisElements
-        ? 0
-        : showcaseLocation + 1
-    ],
-    { opacity: 1, transform: 'translateX(0%)' },
-    {
-      opacity: 0,
-      transform: 'translateX(70%)',
-      duration: 0.4,
-      onComplete: () => {
-        showcaseList.children[
-          mut
-            ? showcaseLocation === 0
-              ? showcaseLisElements - 1
-              : showcaseLocation - 1
-            : showcaseLocation + 1 === showcaseLisElements
-            ? 0
-            : showcaseLocation + 1
-        ].classList.remove('dis-block');
-        showcaseList.children[
-          mut
-            ? showcaseLocation === 0
-              ? showcaseLisElements - 1
-              : showcaseLocation - 1
-            : showcaseLocation + 1 === showcaseLisElements
-            ? 0
-            : showcaseLocation + 1
-        ].classList.add('dis-none');
-
-        showcaseList.children[showcaseLocation].classList.remove('dis-none');
-        showcaseList.children[showcaseLocation].classList.add('dis-block');
-        gsap.fromTo(
-          showcaseList.children[showcaseLocation],
-          { opacity: 0, transform: 'translateX(150%)' },
-          {
-            opacity: 1,
-            transform: 'translateX(0%)',
-            duration: 0.4,
-          }
-        );
-      },
-    }
-  );
-};
 
 btnShowcaseR.addEventListener('click', () => {
   showcaseHandle(true);
@@ -198,6 +231,7 @@ btnShowcaseL.addEventListener('click', () => {
   showcaseHandle(false);
 });
 
+// scroll left-right for products
 const productsList = document.getElementById('products-list');
 let isDown = false;
 let startX;
@@ -223,5 +257,4 @@ productsList.addEventListener('mousemove', (e) => {
   const x = e.pageX - productsList.offsetLeft;
   const walk = (x - startX) * 3; //scroll-fast
   productsList.scrollLeft = scrollLeft - walk;
-  console.log(walk);
 });

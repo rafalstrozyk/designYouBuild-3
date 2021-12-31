@@ -1,5 +1,6 @@
 .navigation {
   width: 90%;
+  padding: 25px;
   justify-content: space-between;
   align-items: center;
 
@@ -16,31 +17,22 @@
       display: none;
     }
 
-    ul {
-      display: flex;
-      & > *:not(:last-child) {
-        margin-right: 20px;
-      }
-    }
-  }
-
-  &-full {
-    width: 90%;
-    padding: 25px;
-
-    justify-content: space-between;
-    align-items: center;
-
+    // ul {
+    //   display: flex;
+    //   & > *:not(:last-child) {
+    //     margin-right: 20px;
+    //   }
+    // }
     ul {
       & > *:not(:last-child) {
         margin-right: 60px;
       }
     }
+  }
 
-    .buttons {
-      & > *:first-child {
-        margin-right: 15px;
-      }
+  .buttons {
+    & > *:first-child {
+      margin-right: 15px;
     }
   }
 
@@ -48,6 +40,11 @@
     width: 90%;
     justify-content: space-between;
     z-index: 500;
+    padding: 0;
+
+    .buttons {
+      margin-right: 60px;
+    }
     &-burger {
       position: fixed;
       top: -35px;
