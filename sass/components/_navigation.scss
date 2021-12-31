@@ -17,12 +17,6 @@
       display: none;
     }
 
-    // ul {
-    //   display: flex;
-    //   & > *:not(:last-child) {
-    //     margin-right: 20px;
-    //   }
-    // }
     ul {
       & > *:not(:last-child) {
         margin-right: 60px;
@@ -84,7 +78,7 @@
       }
     }
     & label {
-      z-index: 600;
+      z-index: var(--before-max);
       display: flex;
       flex-direction: column;
       width: 45px;

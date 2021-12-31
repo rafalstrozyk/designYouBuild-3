@@ -1,6 +1,5 @@
 .showcase {
-  max-width: 90vw;
-
+  width: 100%;
   position: relative;
   column-gap: 68px;
 
@@ -20,7 +19,6 @@
   }
 
   &-container {
-    
     position: relative;
     width: 100%;
     display: flex;
@@ -39,30 +37,6 @@
     position: absolute;
     top: 60%;
     gap: 12px;
-
-    & .disable {
-      path {
-        fill: var(--text-color-one);
-      }
-    }
-
-    & .no-disable {
-      background-color: var(--bg-color-rgba);
-      path {
-        fill: var(--text-color-one-thin);
-      }
-    }
-    button {
-      background-color: var(--bg-color);
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      svg {
-        width: 37px;
-        height: 37px;
-      }
-    }
   }
 
   @media only screen and (max-width: 800px) {

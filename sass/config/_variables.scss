@@ -18,6 +18,7 @@
   --normal-font-size: 1.5rem;
   --big-font-size: 2.25rem;
   --headers-font-size: 4rem;
+  --logo-font-size: 36px;
 
   // FONT WEIGHT
   --font-medium: 400;
@@ -27,4 +28,20 @@
   --after-max: -5;
   --after: -1;
   --before: 10;
+  --before-max: 20;
+
+  --media-normal: 1150px;
+  --media-small-normal: 975px;
+  --media-small: 800px;
+  --media-smaller: 625px;
+
+  --media-font-standard: 100%;
+  --media-font-normal: 90.625%;
+  --media-font-small-normal: 84.375%;
+  --media-font-small: 78.125%;
+  --media-font-smaller: 71.875%;
+
+  --section-top-margin: 10rem;
+
+  --icon-size: 26px;
 }

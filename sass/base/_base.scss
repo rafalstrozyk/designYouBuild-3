@@ -5,28 +5,28 @@
 }
 
 html {
-  font-size: 100%;
+  font-size: var(--media-font-standard);
   scroll-behavior: smooth;
 }
 
 @media only screen and (max-width: 1150px) {
   html {
-    font-size: 90.625%;
+    font-size: var(--media-font-normal);
   }
 }
 @media only screen and (max-width: 975px) {
   html {
-    font-size: 84.375%;
+    font-size: var(--media-font-small-normal);
   }
 }
 @media only screen and (max-width: 800px) {
   html {
-    font-size: 78.125%;
+    font-size: var(--media-font-small);
   }
 }
 @media only screen and (max-width: 625px) {
   html {
-    font-size: 71.875%;
+    font-size: var(--media-font-smaller);
   }
 }
 
@@ -44,7 +44,6 @@ main {
   flex-direction: column;
   & > * {
     max-width: 90%;
-  
   }
 }
 h1,
@@ -61,7 +60,7 @@ h2 {
 }
 
 p {
-  color: --text-color-two;
+  color: var(--text-color-two);
 }
 
 ul {
@@ -88,5 +87,5 @@ button {
 }
 
 section {
-  margin-top: 10rem;
+  margin-top: var(--section-top-margin);
 }

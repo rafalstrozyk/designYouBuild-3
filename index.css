@@ -14,11 +14,24 @@
   --normal-font-size: 1.5rem;
   --big-font-size: 2.25rem;
   --headers-font-size: 4rem;
+  --logo-font-size: 36px;
   --font-medium: 400;
   --font-semi-bold: 500;
   --after-max: -5;
   --after: -1;
   --before: 10;
+  --before-max: 20;
+  --media-normal: 1150px;
+  --media-small-normal: 975px;
+  --media-small: 800px;
+  --media-smaller: 625px;
+  --media-font-standard: 100%;
+  --media-font-normal: 90.625%;
+  --media-font-small-normal: 84.375%;
+  --media-font-small: 78.125%;
+  --media-font-smaller: 71.875%;
+  --section-top-margin: 10rem;
+  --icon-size: 26px;
 }
 
 * {
@@ -28,28 +41,28 @@
 }
 
 html {
-  font-size: 100%;
+  font-size: var(--media-font-standard);
   scroll-behavior: smooth;
 }
 
 @media only screen and (max-width: 1150px) {
   html {
-    font-size: 90.625%;
+    font-size: var(--media-font-normal);
   }
 }
 @media only screen and (max-width: 975px) {
   html {
-    font-size: 84.375%;
+    font-size: var(--media-font-small-normal);
   }
 }
 @media only screen and (max-width: 800px) {
   html {
-    font-size: 78.125%;
+    font-size: var(--media-font-small);
   }
 }
 @media only screen and (max-width: 625px) {
   html {
-    font-size: 71.875%;
+    font-size: var(--media-font-smaller);
   }
 }
 body {
@@ -83,7 +96,7 @@ h2 {
 }
 
 p {
-  color: --text-color-two;
+  color: var(--text-color-two);
 }
 
 ul {
@@ -113,7 +126,7 @@ button {
 }
 
 section {
-  margin-top: 10rem;
+  margin-top: var(--section-top-margin);
 }
 
 .grid {
@@ -240,7 +253,7 @@ section {
     margin-right: 0;
   }
   .navigation label {
-    z-index: 600;
+    z-index: var(--before-max);
     display: flex;
     flex-direction: column;
     width: 45px;
@@ -282,12 +295,12 @@ section {
 
 .logo {
   font-family: var(--dm-font);
-  font-size: 36px;
+  font-size: var(--logo-font-size);
 }
 
 .btn-icon {
-  width: 26px;
-  height: 26px;
+  width: var(--icon-size);
+  height: var(--icon-size);
 }
 .btn-select {
   color: var(--text-color-one);
@@ -303,17 +316,41 @@ section {
   background-color: var(--btn-2-cbg-color);
   color: var(--text-color-one);
 }
+.btn-pad-20 {
+  padding: 20px;
+}
+.btn-showcase {
+  background-color: var(--bg-color);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-showcase svg {
+  width: 37px;
+  height: 37px;
+}
+
+.disable path {
+  fill: var(--text-color-one);
+}
+
+.no-disable {
+  background-color: var(--bg-color-rgba);
+}
+.no-disable path {
+  fill: var(--text-color-one-thin);
+}
 
 .header {
   width: 90%;
-  height: 80vh;
+  min-height: 400px;
   position: relative;
   overflow: hidden;
 }
 .header img {
   z-index: var(--after);
   max-width: 75vw;
-  max-height: 80vh;
   display: block;
   position: absolute;
   right: 0;
@@ -368,6 +405,12 @@ section {
     right: 20%;
   }
 }
+@media only screen and (max-width: 800px) and (max-width: 435px) {
+  .header-content {
+    padding: 15px 5px;
+    right: 0%;
+  }
+}
 
 .products {
   width: 100%;
@@ -401,7 +444,7 @@ section {
     width: 20px;
     height: 20px;
     border: 1px solid var(--text-color-one-rgba);
-    z-index: 20;
+    z-index: var(--before);
     border-radius: 50%;
   }
   .products .arrow::after {
@@ -495,7 +538,7 @@ section {
 }
 
 .showcase {
-  max-width: 90vw;
+  width: 100%;
   position: relative;
   column-gap: 68px;
 }
@@ -526,26 +569,6 @@ section {
   position: absolute;
   top: 60%;
   gap: 12px;
-}
-.showcase-buttons .disable path {
-  fill: var(--text-color-one);
-}
-.showcase-buttons .no-disable {
-  background-color: var(--bg-color-rgba);
-}
-.showcase-buttons .no-disable path {
-  fill: var(--text-color-one-thin);
-}
-.showcase-buttons button {
-  background-color: var(--bg-color);
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.showcase-buttons button svg {
-  width: 37px;
-  height: 37px;
 }
 @media only screen and (max-width: 800px) {
   .showcase {
@@ -587,9 +610,6 @@ section {
 .contact-buttons {
   display: flex;
   gap: 30px;
-}
-.contact button {
-  padding: 20px;
 }
 @media only screen and (max-width: 800px) {
   .contact-buttons {

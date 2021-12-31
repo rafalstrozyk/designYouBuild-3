@@ -1,7 +1,7 @@
 .btn {
   &-icon {
-    width: 26px;
-    height: 26px;
+    width: var(--icon-size);
+    height: var(--icon-size);
   }
 
   &-select {
@@ -20,5 +20,31 @@
     background-color: var(--btn-2-cbg-color);
     color: var(--text-color-one);
   }
+  &-pad-20 {
+    padding: 20px;
+  }
 
+  &-showcase {
+    background-color: var(--bg-color);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 37px;
+      height: 37px;
+    }
+  }
+}
+
+.disable {
+  path {
+    fill: var(--text-color-one);
+  }
+}
+.no-disable {
+  background-color: var(--bg-color-rgba);
+  path {
+    fill: var(--text-color-one-thin);
+  }
 }

@@ -33,7 +33,7 @@
       width: 20px;
       height: 20px;
       border: 1px solid var(--text-color-one-rgba);
-      z-index: 20;
+      z-index: var(--before);
       border-radius: 50%;
 
       &::after {
