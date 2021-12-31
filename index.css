@@ -344,6 +344,7 @@ section {
 
 .header {
   width: 90%;
+  height: 80vh;
   min-height: 400px;
   position: relative;
   overflow: hidden;
@@ -351,6 +352,7 @@ section {
 .header img {
   z-index: var(--after);
   max-width: 75vw;
+  max-height: 80vh;
   display: block;
   position: absolute;
   right: 0;
