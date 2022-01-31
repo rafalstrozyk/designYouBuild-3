@@ -58,7 +58,6 @@ const showcaseHandle = (mut) => {
             ? 0
             : showcaseLocation + 1
         ].classList.add('dis-none');
-
         showcaseList.children[showcaseLocation].classList.remove('dis-none');
         showcaseList.children[showcaseLocation].classList.add('dis-block');
         gsap.fromTo(
@@ -184,11 +183,15 @@ for (const link of navLinks) {
 
 window.addEventListener('resize', () => {
   // used for delete display none in computer version if is resize
-  reportWindowSize().x > 800
-    ? productsMenu.style.display != 'flex'
-      ? (productsMenu.style.display = 'flex')
-      : null
-    : (productsMenu.style.display = 'none');
+  if (reportWindowSize().x > 800) {
+    if (productsMenu.style.display != 'flex') {
+      productsMenu.style.display = 'flex';
+      productsMenu.style.opacity = 1;
+    } else {
+      productsMenu.style.display = 'none';
+      productsMenu.style.opacity = 0;
+    }
+  }
 });
 
 // show menu mobile version on click burger
@@ -204,13 +207,18 @@ document.addEventListener('click', (e) => {
     nav.style.display = 'none';
     burgerCheckbox.checked = false;
   }
-  if (!btnProductsMenu.contains(e.target) && !productsMenu.contains(e.target)) {
-    unshowProductsMenuAnimation();
+  if (reportWindowSize().x < 800) {
+    if (
+      !btnProductsMenu.contains(e.target) &&
+      !productsMenu.contains(e.target)
+    ) {
+      unshowProductsMenuAnimation();
+    }
   }
 });
 
 btnProductsMenu.addEventListener('click', () => {
-  productsMenu.style.display === 'flex'
+  productsMenu.style.display === 'flex' && reportWindowSize().x > 800
     ? unshowProductsMenuAnimation()
     : showProductsMenuAnimation();
 });

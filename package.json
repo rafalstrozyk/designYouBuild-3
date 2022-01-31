@@ -4,6 +4,7 @@
   "description": "https://dev.to/zernonia/i-design-you-build-frontend-challenge-3-gda",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
     "css-build": "sass --no-source-map ./sass/main.scss ./index.css",
     "css-watch": "sass --watch --no-source-map ./sass/main.scss ./index.css"
